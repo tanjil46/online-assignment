@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Assin from './img/ASE-STUDY-ASSIGNMENT.jpg'
 import { useContext } from "react";
 import { AuthContext } from "./Authprovide";
@@ -8,7 +8,8 @@ const Login = () => {
 
 
 const{userSingIn,googleLogIn}=useContext(AuthContext)
-
+const location=useLocation()
+const navigate=useNavigate()
 const loginHandler=e=>{
  
   e.preventDefault()
@@ -29,7 +30,7 @@ const loginHandler=e=>{
      'success'
    )
 
-
+   navigate(location?.state? location.state:'/')
 
  
   })

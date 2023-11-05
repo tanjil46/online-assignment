@@ -15,6 +15,8 @@ import Resister from './components/Resister.jsx';
 import Login from './components/Login.jsx';
 import Authprovide from './components/Authprovide.jsx';
 import CreateAssingment from './components/Assignments/CreateAssingment.jsx';
+import Assignments from './components/Assignments/Assignments.jsx';
+import PrivateOfCreateAssig from './privateRoutes/PrivateOfCreateAssig.jsx';
 
 
 
@@ -41,8 +43,12 @@ const router=createBrowserRouter([
   element:<Login></Login>
 },{
  path:'/createassin',
- element:<CreateAssingment></CreateAssingment>
+ element:<PrivateOfCreateAssig><CreateAssingment></CreateAssingment></PrivateOfCreateAssig>
 
+},
+{
+  path:'/assin',
+  element:<Assignments></Assignments>
 }
 
 
