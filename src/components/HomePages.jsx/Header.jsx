@@ -1,8 +1,48 @@
 import PropTypes from 'prop-types';
 import LOGO from '../img/assing-logo.jpg'
 import { Link } from 'react-router-dom';
-import PROFILE from '../img/profile.png'
+
+import { useContext} from 'react';
+import { AuthContext } from '../Authprovide';
+import Swal from 'sweetalert2';
 const Header = ({children}) => {
+
+const{userLogOut,user}=useContext(AuthContext)
+
+
+const logOutHandler=()=>{
+  userLogOut()
+  .then(()=>{
+    
+      Swal.fire(
+          'Sucess!',
+          'Succesfully LogOut',
+           'success'
+         )
+
+  })
+  .catch(error=>{
+      console.log(error.message)
+      Swal.fire(
+          'Error!',
+          `${error.message}`,
+          'error'
+      )
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div>
             <div className="drawer">
@@ -16,7 +56,12 @@ const Header = ({children}) => {
         </label>
       </div> 
      <div className="lg:flex-1 mx-auto ">
+      
         <img className='w-[140px] rounded-full' src={LOGO}></img>
+    
+
+    
+        
      </div>
      
      
@@ -28,11 +73,22 @@ const Header = ({children}) => {
          <Link to='/createassin'>Create Assignments</Link>
          <Link to='/myassin'>My Assignments</Link>
          <Link to='/subassin'>Submitted Assignments</Link>
-         <Link className='border-2 py-2 px-4 border-white hover:bg-slate-500' to='/login'>LOG IN</Link>
+           {
+             user?<Link onClick={logOutHandler} className='border-2 py-2 px-4 border-white hover:bg-slate-500' to='/login'>LOG OUT</Link>:
+             <Link className='border-2 py-2 px-4 border-white hover:bg-slate-500' to='/login'>LOG IN</Link>
+           }
+       
+
+
          <div className="">
-         <div className="w-10 rounded-full">
-          <img className='rounded-lg' src={PROFILE} />
-        </div>
+
+{
+    user&&<img className={`w-[55px]  rounded-full hover:${user.displayName}`} src={user.photoURL}></img>
+    
+
+    
+}
+
          </div>
 
 
@@ -57,12 +113,18 @@ const Header = ({children}) => {
     <ul className="menu p-4 w-80 min-h-full text-center  space-y-8 text-white font-bold bg-black">
 
 
-    <Link className='border-2 py-2 px-4 border-white hover:bg-slate-500' to='/login'>LOG IN</Link>
+    {
+             user?<Link onClick={logOutHandler} className='border-2 py-2 px-4 border-white hover:bg-slate-500' to='/login'>LOG OUT</Link>:
+             <Link className='border-2 py-2 px-4 border-white hover:bg-slate-500' to='/login'>LOG IN</Link>
+           }
+       
+        
+{
+    user&&<img className={`w-[55px] mx-auto  rounded-full hover:${user.displayName}`} src={user.photoURL}></img>
+    
 
-    <div className="w-10 mx-auto rounded-full">
-          <img className='rounded-lg' src={PROFILE} />
-        </div>
-
+    
+}
     <Link to='assin'>Assignments</Link>
          <Link to='createassin'>Create Assignments</Link>
          <Link to='myassin'>My Assignments</Link>

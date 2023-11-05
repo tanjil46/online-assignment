@@ -1,17 +1,78 @@
 import { Link } from "react-router-dom";
 import Assin from './img/ASE-STUDY-ASSIGNMENT.jpg'
-
+import { useContext } from "react";
+import { AuthContext } from "./Authprovide";
+import Swal from "sweetalert2";
+import {  FcGoogle  } from "react-icons/fc";
 const Login = () => {
 
 
-
+const{userSingIn,googleLogIn}=useContext(AuthContext)
 
 const loginHandler=e=>{
  
+  e.preventDefault()
 
 
+   
+  const email=e.target.email.value
+  const password=e.target.password.value
+  console.log(email,password)
+ 
+
+  userSingIn(email,password)
+  .then((result)=>{
+   console.log(result.user)
+   Swal.fire(
+    'Sucess!',
+    'Succesfully Login',
+     'success'
+   )
+
+
+
+ 
+  })
+  .catch(error=>{
+  console.log(error.message)
+  Swal.fire(
+    'Error!',
+    `${error.message}`,
+    'error'
+  )
+  })
 
 }
+
+const googleLogInHandler=()=>{ 
+  googleLogIn()
+  .then((result)=>{
+     console.log(result.user)
+     Swal.fire(
+       'Sucess!',
+       'Succesfully Login',
+        'success'
+      )
+   
+    })
+    .catch(error=>{
+    console.log(error.message)
+     
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -77,8 +138,8 @@ const loginHandler=e=>{
 
 </form>
 
- <p className="">Or Login With Google</p>
- <button className="btn no-animation">I don't have click animation</button>
+ <p className="">Or Login With</p>
+ <button onClick={googleLogInHandler} className="btn no-animation text-2xl"><FcGoogle></FcGoogle></button>
 
 
 

@@ -1,16 +1,81 @@
 
 import { Link } from 'react-router-dom';
 import Assin from './img/ASE-STUDY-ASSIGNMENT.jpg'
+import { useContext } from 'react';
+import { AuthContext } from './Authprovide';
+import Swal from 'sweetalert2';
 
 const Resister = () => {
+
+
+const{createUser}=useContext(AuthContext)
+
+
+
 
 
 
  const SingInHandler=e=>{
 
+e.preventDefault()
+    
+   
+  const email=e.target.email.value
+  const password=e.target.password.value
+  const name=e.target.name.value
+  const photoUrl=e.target.name.value
+  console.log(email,password,name,photoUrl)
+ 
+  if(password.length<6){
+    return Swal.fire(
+        'Warning!',
+        'Your Password Must be  Minimum Six characters',
+        'warning'
+    ) 
+    }
+    else if(!/[A-Z]/.test(password)){
+        return Swal.fire(
+            'Warning!',
+            'There Must Be a Capital latter',
+            'warning'
+        )
+
+  
+    }
+    else if(!/[@$!%*?&]/.test(password)){
+        return Swal.fire(
+            'Warning!',
+            'There Must Be a Special latter',
+            'warning'
+        )
+
+        
+
+
+    }
+    
 
 
 
+  createUser(email,password)
+  .then((result)=>{
+   console.log(result.user)
+   Swal.fire(
+    'Sucess!',
+    'Succesfully Resistered',
+     'success'
+   )
+ 
+
+  })
+  .catch(error=>{
+  console.log(error.message)
+ Swal.fire(
+    'Error!',
+    `${error.message}`,
+    'error'
+)
+  })
 
 
 

@@ -6,8 +6,6 @@ const FeatureCard = ({feature}) => {
  const{img,assignment}=feature;
 const[spinner,setSpinner]=useState(true)
 
-
-
 useEffect(()=>{
   setTimeout(()=>{
  setSpinner(false)

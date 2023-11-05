@@ -13,6 +13,8 @@ import Errorelement from './components/Errorelement.jsx';
 import Home from './components/HomePages.jsx/Home.jsx';
 import Resister from './components/Resister.jsx';
 import Login from './components/Login.jsx';
+import Authprovide from './components/Authprovide.jsx';
+import CreateAssingment from './components/Assignments/CreateAssingment.jsx';
 
 
 
@@ -37,6 +39,10 @@ const router=createBrowserRouter([
 {
   path:'/login',
   element:<Login></Login>
+},{
+ path:'/createassin',
+ element:<CreateAssingment></CreateAssingment>
+
 }
 
 
@@ -74,6 +80,8 @@ const router=createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <RouterProvider router={router}></RouterProvider>
+ <Authprovide>
+ <RouterProvider router={router}></RouterProvider>
+ </Authprovide>
   </React.StrictMode>,
 )
