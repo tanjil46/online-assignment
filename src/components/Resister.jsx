@@ -25,6 +25,24 @@ e.preventDefault()
   const name=e.target.name.value
   const photoUrl=e.target.name.value
   console.log(email,password,name,photoUrl)
+
+
+
+  if (email === '' || name === '' ||password=== '' || photoUrl === '' ) {
+    
+    Swal.fire(
+        'error',
+        'Please fill All the Fields',
+        'error'
+    )
+    return;
+  }
+
+
+
+
+
+
  
   if(password.length<6){
     return Swal.fire(

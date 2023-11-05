@@ -2,11 +2,13 @@
 import axios from 'axios';
 import createback from '../img/12.jpg'
 import Swal from 'sweetalert2';
+import { useContext } from 'react';
+import { AuthContext } from '../Authprovide';
 
 
 const CreateAssingment = () => {
 
-
+const {user}=useContext(AuthContext)
     const backStyle={
     
         backgroundImage:`url(${createback})`
@@ -25,10 +27,31 @@ const CreateAssingment = () => {
    const thumbailImage=form.thumb.value;
   const description=form.desc.value
   const assignmentLevel=form.level.value
-const email=form.email.value;
+ const email=form.email.value;
 const date=form.date.value;
 
 console.log(title,mark,thumbailImage,description,assignmentLevel,email,date)
+
+if (title === '' || description === '' || mark === '' || thumbailImage === '' || assignmentLevel === '' || email=== '' || date === '' ) {
+    
+    Swal.fire(
+        'error',
+        'Please fill All the Fields',
+        'error'
+    )
+    return;
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
 const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email,date}
@@ -51,7 +74,7 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
         )
     }
     
-
+    
  })
 
 
@@ -158,7 +181,7 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
   </label>
   <label className="input-group">
 
-    <input type="email"  name="email" className="input input-bordered w-full max-w-x " />
+    <input type="email"  name='email' value={user&& user.email} defaultValue={user && user.email} className="input input-bordered w-full max-w-x " />
   </label>
 </div>
 
