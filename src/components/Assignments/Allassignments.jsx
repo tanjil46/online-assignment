@@ -5,6 +5,7 @@ import { AiFillDelete  } from "react-icons/ai";
 import axios from 'axios';
 import { AuthContext } from '../Authprovide';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 const Allassignments = ({assign,setFilterLevelAssign,filterlevelAssign}) => {
 
 const{thumbailImage,title,mark,email,_id}=assign
@@ -128,7 +129,7 @@ const deleteHandler=(_id)=>{
                 <p>Mark:{mark}</p>
                 <div className="flex justify-between gap-4 items-center ">
                   <button className="btn btn-primary">Viwe Assignment</button>
-                  <button className="btn btn-primary">Update Assignment</button>
+                  <Link to={`/update/${_id}`} className="btn btn-primary">Update Assignment</Link>
                 </div>
                 <div className="text-center">
                   <button onClick={()=>deleteHandler(_id)} className='btn text-3xl text-red-600'><AiFillDelete></AiFillDelete></button>

@@ -17,6 +17,7 @@ import Authprovide from './components/Authprovide.jsx';
 import CreateAssingment from './components/Assignments/CreateAssingment.jsx';
 import Assignments from './components/Assignments/Assignments.jsx';
 import PrivateOfCreateAssig from './privateRoutes/PrivateOfCreateAssig.jsx';
+import UpdateAssign from './components/Assignments/UpdateAssign.jsx';
 
 
 
@@ -50,6 +51,11 @@ const router=createBrowserRouter([
   path:'/assin',
   element:<Assignments></Assignments>
  
+},
+{
+  path:'/update/:id',
+  element:<PrivateOfCreateAssig><UpdateAssign></UpdateAssign></PrivateOfCreateAssig>,
+  loader:({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
 }
 
 
