@@ -5,7 +5,7 @@ import { AiFillDelete  } from "react-icons/ai";
 import axios from 'axios';
 import { AuthContext } from '../Authprovide';
 import Swal from 'sweetalert2';
-const Allassignments = ({assign}) => {
+const Allassignments = ({assign,setFilterLevelAssign,filterlevelAssign}) => {
 
 const{thumbailImage,title,mark,email,_id}=assign
 const {user}=useContext(AuthContext)
@@ -48,7 +48,20 @@ const deleteHandler=(_id)=>{
     .then((result) => {
         if (result.isConfirmed){
           
-     if(user && user.email!==email){
+
+     if(!user){
+      Swal.fire(
+        'error',
+        'You Have To Login First',
+        'error'
+    )
+    return;
+
+
+
+     }
+
+    else if(user && user.email!==email){
         Swal.fire(
             'error',
             'You Have No Permission To Delete',
@@ -65,6 +78,14 @@ const deleteHandler=(_id)=>{
             'Succesfully Deleted',
             'success'
         )
+
+ 
+        const deleteAssingment=filterlevelAssign.filter(levelAssign=>levelAssign._id!==_id)
+
+                    setFilterLevelAssign(deleteAssingment)
+
+
+
     }
 
 })
@@ -84,35 +105,6 @@ const deleteHandler=(_id)=>{
 
 
         })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-    
-    // })
-    
-    
-    
-    
-   
-
-
-
-
-
-
 
 
 
@@ -152,26 +144,15 @@ const deleteHandler=(_id)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
       
     );
 };
 
 
 Allassignments.propTypes={
-assign:PropTypes.object
-        
+assign:PropTypes.object,
+filterlevelAssign:PropTypes.any, 
+setFilterLevelAssign:PropTypes.any     
         
      }
 export default Allassignments;

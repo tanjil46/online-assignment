@@ -67,7 +67,7 @@ const levelHanler=(event)=>{
 
         {
 
-            filterlevelAssign.map((assign,idx)=><Allassignments assign={assign} key={idx}></Allassignments>)
+            filterlevelAssign.map((assign,idx)=><Allassignments setFilterLevelAssign={setFilterLevelAssign} filterlevelAssign={filterlevelAssign} assign={assign} key={idx}></Allassignments>)
         }
 
 
