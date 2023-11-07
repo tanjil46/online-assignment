@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
-import cardBg from '../img/card bg.jpg'
+import { useContext} from 'react';
+
 import PropTypes from 'prop-types';
 import { AiFillDelete  } from "react-icons/ai";
 import axios from 'axios';
@@ -12,22 +12,6 @@ const{thumbailImage,title,mark,email,_id}=assign
 const {user}=useContext(AuthContext)
 
 
-const cardBgStyle={
-    
-    backgroundImage:`url(${cardBg})`
-}
-
-const[spinner,setSpinner]=useState(true)
-
-useEffect(()=>{
-  setTimeout(()=>{
- setSpinner(false)
-
-
-
-  },1000)
-  
-},[])
 
 
 const deleteHandler=(_id)=>{
@@ -120,16 +104,16 @@ const deleteHandler=(_id)=>{
     return (
         <div className=''>
 
-            {
-              spinner ?<span className="loading loading-spinner loading-lg"></span>:
-              <div className="card  p-12" style={cardBgStyle}>
-              <figure><img className='w-[300px] h-[200px] rounded-lg' src={thumbailImage} alt="assignment" /></figure>
-              <div className="card-body">
-                <h2 className="card-title">{title}</h2>
-                <p>Mark:{mark}</p>
-                <div className="flex justify-between gap-4 items-center ">
-                  <Link to={`/details/${_id}`} className="btn btn-primary">View Assignment</Link>
-                  <Link to={`/update/${_id}`} className="btn btn-primary">Update Assignment</Link>
+            
+              
+              <div className="card  p-4 bg-slate-700" >
+              <figure><img className='md:w-[300px] h-[200px] w-full rounded-lg' src={thumbailImage} alt="assignment" /></figure>
+              <div className="card-body space-y-4">
+                <h2 className="text-sm font-bold text-white">{title}</h2>
+                <p className='text-2xl font-bold text-white'>Mark:<span className='bg-green-500 p-2 rounded-lg'>{mark}</span></p>
+                <div className="  text-center  space-y-4">
+                  <Link to={`/details/${_id}`} className="btn bg-white">View Assignment</Link>
+                  <Link to={`/update/${_id}`} className="btn bg-white">Update Assignment</Link>
                 </div>
                 <div className="text-center">
                   <button onClick={()=>deleteHandler(_id)} className='btn text-3xl text-red-600'><AiFillDelete></AiFillDelete></button>
@@ -139,7 +123,7 @@ const deleteHandler=(_id)=>{
               
 
 
-            }
+            
             
   </div>       
 

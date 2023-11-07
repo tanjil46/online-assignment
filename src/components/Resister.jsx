@@ -189,7 +189,7 @@ e.preventDefault()
         </form>
         <div className="flex ">
             <p className=''>Already Resisterd! Please Login</p>
-            <Link className='btn' to='/login'>Login Now</Link>
+            <Link className='btn bg-slate-500' to='/login'>Login Now</Link>
         </div>
          </div>
         </div>

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import LOGO from '../img/assing-logo.jpg'
 import { Link } from 'react-router-dom';
-
+import USER from '../img/default-profile-.jpg'
 import { useContext} from 'react';
 import { AuthContext } from '../Authprovide';
 import Swal from 'sweetalert2';
@@ -83,8 +83,8 @@ const logOutHandler=()=>{
          <div className="">
 
 {
-    user&&<img className={`w-[55px]  rounded-full hover:${user.displayName}`} src={user.photoURL}></img>
-    
+    user?<img className={`w-[55px]  rounded-full hover:${user.displayName}`} src={user.photoURL}></img>
+    :<img className={'w-[55px]  rounded-full '} src={USER}></img>
 
     
 }
@@ -118,17 +118,19 @@ const logOutHandler=()=>{
              <Link className='border-2 py-2 px-4 border-white hover:bg-slate-500' to='/login'>LOG IN</Link>
            }
        
-        
+        <div className="mx-auto">
 {
-    user&&<img className={`w-[55px] mx-auto  rounded-full hover:${user.displayName}`} src={user.photoURL}></img>
-    
+    user?<img className={`w-[55px] mx-auto  rounded-full hover:${user.displayName}`} src={user.photoURL}></img>
+    :<img className={'w-[55px]  rounded-full '} src={USER}></img>
 
     
 }
-    <Link to='assin'>Assignments</Link>
-         <Link to='createassin'>Create Assignments</Link>
-         <Link to='myassin'>My Assignments</Link>
-         <Link to='subassin'>Submitted Assignments</Link>
+</div>
+
+    <Link className='hover:bg-slate-700 py-2 rounded-lg' to='assin'>Assignments</Link>
+         <Link className='hover:bg-slate-700 py-2 rounded-lg' to='createassin'>Create Assignments</Link>
+         <Link className='hover:bg-slate-700 py-2 rounded-lg'  to='myassin'>My Assignments</Link>
+         <Link className='hover:bg-slate-700 py-2 rounded-lg'  to='subassin'>Submitted Assignments</Link>
          </ul>
 
   </div>

@@ -97,7 +97,7 @@ console.log(res.data)
     return (
         <div className=' bg-cover bg-center  p-16' style={backStyle}>
             
-            <div className="flex gap-6 ">
+            <div className="flex md:flex-row flex-col items-center gap-6 ">
 <div className="w-[50%]">
 
 <p className="text-3xl font-bold text-white">Update Your Assignment For Batter Look</p>
@@ -222,7 +222,7 @@ console.log(res.data)
 
 <div className="">
  
- <button type='submit' className="btn">Update Assingment</button>
+ <button type='submit' className="btn bg-slate-600 text-white hover:text-black">Update Assingment</button>
 
 </div>
 

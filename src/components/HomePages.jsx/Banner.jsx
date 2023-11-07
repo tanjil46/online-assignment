@@ -20,7 +20,7 @@ const Banner = () => {
   <div className="hero-overlay bg-opacity-20"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
-      <h1 className="mb-5 text-3xl font-bold">Make Your Assignment Best</h1>
+      <h1 className="mb-5 text-3xl font-bold">Make Your Assignment Batter and Wonderful</h1>
       <p className="mb-5">Try To Make An Unique Assigment .Make Sure Yue are Unique</p>
      
     </div>

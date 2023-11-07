@@ -1,4 +1,4 @@
-import {  useLoaderData, useParams } from "react-router-dom";
+import {  useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AiFillFileMarkdown} from "react-icons/ai"
 import {BsCalendar2DateFill } from "react-icons/bs"
 import { useContext } from "react";
@@ -12,7 +12,7 @@ const DetailsAssign = () => {
     const details=useLoaderData()
 const{user}=useContext(AuthContext)
 
-
+const navigate=useNavigate()
 
 const findAssignDetail=details.find(detail=>detail._id===id)
 
@@ -52,6 +52,7 @@ if(res.data.insertedId){
     )
     
 }
+navigate('/subassin')
 
 })
 
@@ -101,11 +102,11 @@ if(res.data.insertedId){
 
    <h1 className="md:text-2xl text-1xl text-center text-white font-bold">{title}</h1>
    <div className="flex justify-center gap-5">
-   <p className="py-6 text-white text-2xl flex items-center ">Mark:<AiFillFileMarkdown></AiFillFileMarkdown>
+   <p className="py-6 text-white text-2xl flex items-center ">Mark:<AiFillFileMarkdown className="text-red-500"></AiFillFileMarkdown>
    <h1>{mark}</h1>
    </p>
    <p className="py-6 text-white flex text-2xl items-center">
-     <BsCalendar2DateFill></BsCalendar2DateFill>
+     <BsCalendar2DateFill className="text-blue-500"></BsCalendar2DateFill>
      <p>{date}</p>
    </p>
    </div>
@@ -136,7 +137,7 @@ if(res.data.insertedId){
   </label>
   <label className="input-group">
 
-    <input type="text"  name="name" className="input input-bordered w-full max-w-x " />
+    <input type="text"  name="name" className="input input-bordered w-full max-w-x "required />
   </label>
 </div>
 
@@ -147,7 +148,7 @@ if(res.data.insertedId){
   </label>
   <label className="input-group">
 
-    <input type="text"  name="pdfLink" className="input input-bordered w-full max-w-x " />
+    <input type="text"  name="pdfLink" className="input input-bordered w-full max-w-x " required/>
   </label>
 </div>
 
@@ -160,7 +161,7 @@ if(res.data.insertedId){
   </label>
   <label className="input-group">
 
-  <textarea className="textarea textarea-bordered w-[300px]" name='note'></textarea>
+  <textarea className="textarea textarea-bordered w-[300px]" name='note' required></textarea>
   </label>
 </div>
 

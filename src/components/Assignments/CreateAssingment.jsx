@@ -100,10 +100,10 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
     return (
         <div className=' bg-cover bg-center  p-16' style={backStyle}>
             
-            <div className="flex gap-6 ">
+            <div className="flex flex-col md:flex-row gap-8 items-center ">
 <div className="w-[50%]">
 
-<p className="text-3xl font-bold text-white">Lets Make A Unique Assignment</p>
+<p className="md:text-3xl text-lg font-bold text-white">Lets Make A Unique Assignment</p>
 <h1 className='text-white text-justify pt-4 w-[]'>Studying online has become an increasingly popular choice for learners of all ages and backgrounds. The convenience and flexibility of online education allow individuals to pursue their educational goals from the comfort of their own homes or any location with an internet connection. This approach to learning opens up a world of opportunities, enabling students to access a wide range of courses and degree programs, often from prestigious institutions, that might not have been accessible otherwise. </h1>
 
 </div>
@@ -123,7 +123,7 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
   </label>
   <label className="input-group">
 
-    <input type="text"  name="title" className="input input-bordered w-full max-w-x " />
+    <input type="text"  name="title" className="input input-bordered md:w-full w-[80%] max-w-x " />
   </label>
 </div>
 
@@ -137,7 +137,7 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
   </label>
   <label className="input-group">
 
-    <input type="text"  name="mark" className="input input-bordered w-full max-w-x " />
+    <input type="text"  name="mark" className="input input-bordered md:w-full w-[80%] max-w-x " />
   </label>
 </div>
 
@@ -151,7 +151,7 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
   </label>
   <label className="input-group">
 
-    <input type="text"  name="thumb" className="input input-bordered w-full max-w-x " />
+    <input type="text"  name="thumb" className="input input-bordered md:w-full w-[80%] max-w-x " />
   </label>
 </div>
 
@@ -181,7 +181,7 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
   </label>
   <label className="input-group">
 
-    <input type="email"  name='email' value={user&& user.email} defaultValue={user && user.email} className="input input-bordered w-full max-w-x " />
+    <input type="email"  name='email' value={user&& user.email} defaultValue={user && user.email} className="input input-bordered md:w-full w-[80%] max-w-x" />
   </label>
 </div>
 
@@ -202,7 +202,7 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
     <span className="label-text font-bold text-white">DUE DATE</span>
   </label>
 
-  <input type="date"  name="date" className="input input-bordered w-full max-w-x " />
+  <input type="date"  name="date" className="input input-bordered md:w-full w-[80%] max-w-x " />
 
 
 {/*   
@@ -219,13 +219,13 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
   </label>
   <label className="input-group">
 
-  <textarea className="textarea textarea-bordered w-[300px]" name='desc'></textarea>
+  <textarea className="textarea textarea-bordered md:w-[300px] w-[280px] " name='desc'></textarea>
   </label>
 </div>
 
 <div className="">
  
- <button type='submit' className="btn">Create Assingment</button>
+ <button type='submit' className="btn bg-slate-700 text-white hover:text-black">Create Assingment</button>
 
 </div>
 

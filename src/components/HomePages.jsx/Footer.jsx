@@ -12,7 +12,7 @@ const Footer = () => {
             <footer className="footer p-10 bg-slate-500 text-white">
   <aside>
    <img className="w-[100px] rounded-lg" src={LOGO}></img>
-    <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
+    <p>Online Student Community.<br/>Providing reliable tech since 1992</p>
   </aside> 
   <nav>
     <header className="footer-title">Services</header> 
@@ -34,7 +34,16 @@ const Footer = () => {
     <a className="link link-hover">Privacy policy</a> 
     <a className="link link-hover">Cookie policy</a>
   </nav>
+  
 </footer>
+
+<div className="">
+  <footer className="footer footer-center p-4 bg-slate-600 text-white ">
+  <aside>
+    <p>Copyright © 2023 - All right reserved by Online Student community</p>
+  </aside>
+</footer>
+  </div>
         </div>
     );
 };

@@ -54,7 +54,7 @@ const googleLogInHandler=()=>{
        'Succesfully Login',
         'success'
       )
-   
+      navigate(location?.state? location.state:'/')
     })
     .catch(error=>{
     console.log(error.message)
@@ -140,7 +140,7 @@ const googleLogInHandler=()=>{
 </form>
 
  <p className="">Or Login With</p>
- <button onClick={googleLogInHandler} className="btn no-animation text-2xl"><FcGoogle></FcGoogle></button>
+ <button onClick={googleLogInHandler} className="btn no-animation text-2xl bg-slate-800"><FcGoogle></FcGoogle></button>
 
 
 

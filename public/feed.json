@@ -1,0 +1,39 @@
+[
+    {
+      "feedbackDate": "2023-04-05",
+      "feedbackTitle": "Platform Usability",
+      "feedbackDescription": "Users are finding it challenging to navigate through the assignment submission process. Consider simplifying the interface.",
+      "feedbackAuthor": "User123"
+    },
+    {
+      "feedbackDate": "2023-03-22",
+      "feedbackTitle": "Feature Request",
+      "feedbackDescription": "It would be helpful to have a built-in chat feature within study groups to facilitate real-time communication.",
+      "feedbackAuthor": "User456"
+    },
+    {
+      "feedbackDate": "2023-03-15",
+      "feedbackTitle": "Bug Report",
+      "feedbackDescription": "I encountered a bug when trying to upload PDF files for assignments. It would fail to upload intermittently.",
+      "feedbackAuthor": "User789"
+    },
+    {
+      "feedbackDate": "2023-03-10",
+      "feedbackTitle": "Performance Issue",
+      "feedbackDescription": "The platform tends to slow down during peak usage times. Performance optimization is needed.",
+      "feedbackAuthor": "User101"
+    },
+    {
+      "feedbackDate": "2023-03-05",
+      "feedbackTitle": "Content Suggestion",
+      "feedbackDescription": "Could you add more math-related study materials? It would benefit students in STEM fields.",
+      "feedbackAuthor": "User222"
+    },
+    {
+      "feedbackDate": "2023-02-28",
+      "feedbackTitle": "Security Concern",
+      "feedbackDescription": "I noticed a potential security vulnerability when logging in. User data should be better protected.",
+      "feedbackAuthor": "User333"
+    }
+  ]
+  

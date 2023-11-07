@@ -14,9 +14,21 @@ const[filterlevelAssign,setFilterLevelAssign]=useState([])
  const[count,setCount]=useState()
  const[pagesNo,setPagesNo]=useState(10)
 const[currentPage,setCurrentPage]=useState(0)
-
+const[spinner,setSpinner]=useState(true)
 
    
+
+
+useEffect(()=>{
+    setTimeout(()=>{
+   setSpinner(false)
+  
+  
+  
+    },1000)
+    
+  },[])
+
  useEffect(()=>{
     axios.get('http://localhost:5000/assignmentcount')
     .then(res=>setCount(res.data.count))
@@ -103,15 +115,15 @@ if(currentPage<pages.length-1){
     return (
         <div>
             
-            <p className="text-2xl font-bold text-center pt-6">Online Group Study <span className="text-3xl text-purple-600 ">Assignment</span></p>
+            <p className="text-2xl font-bold text-center pt-6">Online Group  <span className="text-3xl text-purple-600 ">Assignment</span></p>
 
                <div className="">
          
-   <select name="level" onChange={levelHanler}  value={selectLevel}>
-    <option   value='easy'>Easy</option>
-    <option  value='medium'>Medium</option>
-    <option value='hard'>Hard</option>
-   </select>
+   <p className="text-center md:text-end mt-4 font-bold">Filter By<select className="border-2 border-blue-600" name="level" onChange={levelHanler}  value={selectLevel}>
+    <option className="text-white bg-black font-bold"   value='easy'>Easy</option>
+    <option className="text-white bg-black font-bold"  value='medium'>Medium</option>
+    <option className="text-white bg-black font-bold" value='hard'>Hard</option>
+   </select></p> 
 
 
 
@@ -119,10 +131,13 @@ if(currentPage<pages.length-1){
 
 
 
-          <div className="grid grid-cols-1 md:grid-cols-3  ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-10 ">
 
         {
-
+             spinner ?<div className="h-screen  items-center justify-center loading-lg flex">
+                <span className="loading loading-spinner text-center text-2xl text-green-600"></span>
+             </div>:
+             
             filterlevelAssign.map((assign,idx)=><Allassignments setFilterLevelAssign={setFilterLevelAssign} filterlevelAssign={filterlevelAssign} assign={assign} key={idx}></Allassignments>)
         }
 
@@ -132,18 +147,18 @@ if(currentPage<pages.length-1){
           </div>
 
 
-      <div className="text-center space-x-4">
-        <p>{currentPage}</p>
-        <button onClick={prevhanler}>Prev</button>
+      <div className="text-center space-x-8">
+       
+        <button className="btn bg-slate-400" onClick={prevhanler}>Prev</button>
         {
             pages.map(page=><button onClick={()=>setCurrentPage(page)} 
             className= {`"btn bg-slate-500" ${currentPage===page ?'text-white btn bg-slate-800':undefined} `}key={page}>{page}</button>)
         }
-       <button onClick={nexthandler}>Next</button>
+       <button className="btn bg-slate-400" onClick={nexthandler}>Next</button>
 
        
 <select value={pagesNo} onChange={pagehandler} name='' id=''>
-            <option value='5'>2</option>
+            <option  value='5'>2</option>
            <option value='10'>5</option>
            <option value='20'>10</option>
            <option value='50'>12</option>
