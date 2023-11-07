@@ -11,15 +11,40 @@ const[assignments,setAssignments]=useState([])
 const[filterlevelAssign,setFilterLevelAssign]=useState([])
 // const assignments=useLoaderData()
  const[selectLevel,setSelectLevel]=useState('easy')
- 
+ const[count,setCount]=useState()
+ const[pagesNo,setPagesNo]=useState(10)
+const[currentPage,setCurrentPage]=useState(0)
+
+
+   
+ useEffect(()=>{
+    axios.get('http://localhost:5000/assignmentcount')
+    .then(res=>setCount(res.data.count))
+    
+    },[])
+    
+
+
+    const totalPages=Math.ceil(count/pagesNo)
+
+
+    const pages=[]
+    for(let i=0;i<totalPages;i++){
+        pages.push(i)
+       
+    } 
+
+
+
+
 
 useEffect(()=>{
 
-    axios.get('http://localhost:5000/assignment')
+    axios.get(`http://localhost:5000/assignment?page=${currentPage}&size=${pagesNo}`)
     .then(res=>setAssignments(res.data))
 
 
-},[])
+},[currentPage,pagesNo])
 
 
 
@@ -41,6 +66,37 @@ setFilterLevelAssign(filterLevel)
 const levelHanler=(event)=>{
     setSelectLevel(event.target.value);
 }
+
+
+
+
+ const pagehandler=(e)=>{
+const pageValue=parseInt(e.target.value)
+ setPagesNo(pageValue)
+setCurrentPage(0)
+
+
+ }
+
+
+const prevhanler=()=>{
+if(currentPage>0){
+    setCurrentPage(currentPage-1)
+}
+}
+
+const nexthandler=()=>{
+
+if(currentPage<pages.length-1){
+    setCurrentPage(currentPage+1)
+}
+
+}
+
+
+
+
+
 
 
 
@@ -76,7 +132,27 @@ const levelHanler=(event)=>{
           </div>
 
 
+      <div className="text-center space-x-4">
+        <p>{currentPage}</p>
+        <button onClick={prevhanler}>Prev</button>
+        {
+            pages.map(page=><button onClick={()=>setCurrentPage(page)} 
+            className= {`"btn bg-slate-500" ${currentPage===page ?'text-white btn bg-slate-800':undefined} `}key={page}>{page}</button>)
+        }
+       <button onClick={nexthandler}>Next</button>
 
+       
+<select value={pagesNo} onChange={pagehandler} name='' id=''>
+            <option value='5'>2</option>
+           <option value='10'>5</option>
+           <option value='20'>10</option>
+           <option value='50'>12</option>
+            </select>
+
+
+
+
+      </div>
 
 
 

@@ -128,7 +128,7 @@ const deleteHandler=(_id)=>{
                 <h2 className="card-title">{title}</h2>
                 <p>Mark:{mark}</p>
                 <div className="flex justify-between gap-4 items-center ">
-                  <button className="btn btn-primary">Viwe Assignment</button>
+                  <Link to={`/details/${_id}`} className="btn btn-primary">View Assignment</Link>
                   <Link to={`/update/${_id}`} className="btn btn-primary">Update Assignment</Link>
                 </div>
                 <div className="text-center">

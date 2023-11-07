@@ -18,6 +18,9 @@ import CreateAssingment from './components/Assignments/CreateAssingment.jsx';
 import Assignments from './components/Assignments/Assignments.jsx';
 import PrivateOfCreateAssig from './privateRoutes/PrivateOfCreateAssig.jsx';
 import UpdateAssign from './components/Assignments/UpdateAssign.jsx';
+import DetailsAssign from './components/Assignments/DetailsAssign.jsx';
+import SubmitAssign from './components/Assignments/SubmitAssign.jsx';
+import SubmitUpdate from './components/Assignments/SubmitUpdate.jsx';
 
 
 
@@ -56,6 +59,21 @@ const router=createBrowserRouter([
   path:'/update/:id',
   element:<PrivateOfCreateAssig><UpdateAssign></UpdateAssign></PrivateOfCreateAssig>,
   loader:({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
+},
+{
+  path:'/details/:id',
+  element:<PrivateOfCreateAssig><DetailsAssign></DetailsAssign></PrivateOfCreateAssig>,
+  loader:()=>fetch('http://localhost:5000/assignment')
+},
+{
+ path:'/subassin',
+ element:<SubmitAssign></SubmitAssign>
+
+
+},
+{
+  path:'/updatesub/:id',
+  element:<SubmitUpdate></SubmitUpdate>
 }
 
 
