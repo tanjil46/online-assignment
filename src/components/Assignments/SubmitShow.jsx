@@ -1,6 +1,6 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../Authprovide';
 import { useNavigate} from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -14,6 +14,12 @@ import Swal from 'sweetalert2';
 const SubmitShow = ({submitAss}) => {
 const navigate=useNavigate()
 const{name,title,pdfLink,qNote,mark,thumbailImage,status,_id}=submitAss;
+
+
+
+
+
+
 
 const{user}=useContext(AuthContext)
 
@@ -34,6 +40,12 @@ const statusSecond='Completed'
 const submittedMarkStatus={
     statusSecond,examMark,email,feedBack,mark,title
 }
+
+
+
+
+
+
 
 
 
@@ -68,6 +80,22 @@ navigate('/myassin')
 }
 
 
+ const linkHabler=()=>{
+  
+const usePdfUrl=pdfLink
+
+window.open(usePdfUrl,'_blank')
+ }
+
+
+
+
+
+
+
+
+
+
 
     return (
         <div>
@@ -95,6 +123,11 @@ navigate('/myassin')
 <dialog id="my_modal_1" className="modal">
   <div className="modal-box bg-slate-700">
     
+
+<div className="">
+<a onClick={linkHabler} className='text-blue-400 border-b-2'  href=''>Link Of Google Pdf</a>
+</div>
+
 <div className="">
 
 
