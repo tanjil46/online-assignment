@@ -9,7 +9,6 @@ const Header = ({children}) => {
 
 const{userLogOut,user}=useContext(AuthContext)
 
-
 const logOutHandler=()=>{
   userLogOut()
   .then(()=>{
@@ -84,20 +83,17 @@ const logOutHandler=()=>{
 
 {
    
-    user&&<div className='relative'>
+    user?<div className='relative'>
     <img className={`w-[60px] mx-auto  rounded-full `} src={user.photoURL}></img>
     <div className="absolute top-0 left-0 text-sm p-2 bg-black bg-opacity-50  opacity-0 hover:opacity-100 transition-opacity text-white rounded-full">
             <span className="text-sm ">{user.displayName}</span>
         </div>
 
-</div>?<p className='relative'>
-    <img className={`w-[60px] mx-auto  rounded-full `} src={USER}></img>
-    <p className="absolute top-0 left-0 text-sm p-2 bg-black bg-opacity-50  opacity-0 hover:opacity-100 transition-opacity text-white rounded-full">
-            <span className="text-sm w-[20px] ">{user.email}</span>
-        </p></p>
-    
+</div>
 
-    :<img className={'w-[55px]  rounded-full '} src={USER}></img>
+    : <img className={'w-[55px]  rounded-full '} src={USER}></img>
+
+   
 
   
     

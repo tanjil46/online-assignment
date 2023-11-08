@@ -20,7 +20,7 @@ import PrivateOfCreateAssig from './privateRoutes/PrivateOfCreateAssig.jsx';
 import UpdateAssign from './components/Assignments/UpdateAssign.jsx';
 import DetailsAssign from './components/Assignments/DetailsAssign.jsx';
 import SubmitAssign from './components/Assignments/SubmitAssign.jsx';
-import SubmitUpdate from './components/Assignments/SubmitUpdate.jsx';
+
 import MyAssignment from './components/Assignments/MyAssignment.jsx';
 
 
@@ -59,12 +59,12 @@ const router=createBrowserRouter([
 {
   path:'/update/:id',
   element:<PrivateOfCreateAssig><UpdateAssign></UpdateAssign></PrivateOfCreateAssig>,
-  loader:({params})=>fetch(`http://localhost:5000/assignment/${params.id}`)
+  loader:({params})=>fetch(`https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/assignment/${params.id}`)
 },
 {
   path:'/details/:id',
   element:<PrivateOfCreateAssig><DetailsAssign></DetailsAssign></PrivateOfCreateAssig>,
-  loader:()=>fetch('http://localhost:5000/assignment')
+  loader:()=>fetch('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/assignment')
 },
 {
  path:'/subassin',
@@ -72,10 +72,9 @@ const router=createBrowserRouter([
 
 
 },
-{
-  path:'/updatesub/:id',
-  element:<SubmitUpdate></SubmitUpdate>
-},
+
+
+
 {
   path:'/myassin',
   element:<PrivateOfCreateAssig><MyAssignment></MyAssignment></PrivateOfCreateAssig>

@@ -30,7 +30,7 @@ useEffect(()=>{
   },[])
 
  useEffect(()=>{
-    axios.get('http://localhost:5000/assignmentcount')
+    axios.get('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/assignmentcount')
     .then(res=>setCount(res.data.count))
     
     },[])
@@ -52,7 +52,7 @@ useEffect(()=>{
 
 useEffect(()=>{
 
-    axios.get(`http://localhost:5000/assignment?page=${currentPage}&size=${pagesNo}`)
+    axios.get(`https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/assignment?page=${currentPage}&size=${pagesNo}`)
     .then(res=>setAssignments(res.data))
 
 

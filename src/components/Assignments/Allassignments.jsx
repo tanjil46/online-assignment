@@ -54,7 +54,7 @@ const deleteHandler=(_id)=>{
         )
         return;
      }
-    axios.delete(`http://localhost:5000/assignment/${_id}`)
+    axios.delete(`https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/assignment/${_id}`)
     .then(res=>{
     console.log(res.data) 
     if(res.data.deletedCount){

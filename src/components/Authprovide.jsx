@@ -56,11 +56,11 @@ const Authprovide = ({children}) => {
             setLoading(false)
                 if(currentUser){
                   
-                  axios.post('http://localhost:5000/jwt',userEmail,{withCredentials:true})
+                  axios.post('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/jwt',userEmail,{withCredentials:true})
                   .then(res=>console.log(res.data))
                 }
                 else{
-                  axios.post('http://localhost:5000/logout',userEmail,{withCredentials:true})
+                  axios.post('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/logout',userEmail,{withCredentials:true})
                   .then(res=>console.log(res.data))
                 }
 

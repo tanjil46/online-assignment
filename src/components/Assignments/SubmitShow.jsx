@@ -51,7 +51,7 @@ const submittedMarkStatus={
 const statusUpdate={statusSecond,email}
 
 
-axios.post('http://localhost:5000/submitted',submittedMarkStatus)
+axios.post('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/submitted',submittedMarkStatus)
 .then(res=>{
     console.log(res.data)
     if(res.data.insertedId){
@@ -66,7 +66,7 @@ axios.post('http://localhost:5000/submitted',submittedMarkStatus)
 
 
 
-axios.patch('http://localhost:5000/submitassign',statusUpdate)
+axios.patch('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/submitassign',statusUpdate)
 .then(res=>{
     console.log(res.data)
     
@@ -112,7 +112,7 @@ window.open(usePdfUrl,'_blank')
     <h2 className="card-title text-white">{title}</h2>
     <p className='text-white font-bold'>Name: {name}</p>
   <div className="">
-    <p className='text-center text-white text-lg'>Assignment Marks:{mark}</p>
+    <p className='text-center text-white text-lg'>Marks:{mark}</p>
     <p className='text-center text-white text-lg'>Status:{status}</p>
   </div>
    </div>
@@ -121,8 +121,8 @@ window.open(usePdfUrl,'_blank')
      
 
 
-     
-  {/* <Link className='btn' to={`/updatesub/${_id}`}>Give Marks</Link> */}
+{/* 
+   <Link className='btn' to={`/updatesub/${_id}`}>Give Marks</Link>  */}
 
 
 {/* Open the modal using document.getElementById('ID').showModal() method */}
@@ -135,24 +135,14 @@ window.open(usePdfUrl,'_blank')
 
 
 <div>
-      <Document file="somefile.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-        <Page pageNumber={pageNumber} />
-      </Document>
-      <p>
-        Page {pageNumber} of {numPages}
-      </p>
-    </div>
+    
 
-
-
-
-
-{/* <a onClick={linkHabler} className='text-blue-400 border-b-2'  href=''>Link Of Google Pdf</a> */}
+<a onClick={linkHabler} className='text-blue-400 border-b-2'  href=''>Link Of Google Pdf</a> 
 </div>
 
 <div className="">
 
-
+</div>
 
 <form onSubmit={givemarkHandler} className='space-y-6'>
 

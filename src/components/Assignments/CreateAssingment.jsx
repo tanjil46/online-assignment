@@ -4,10 +4,11 @@ import createback from '../img/12.jpg'
 import Swal from 'sweetalert2';
 import { useContext } from 'react';
 import { AuthContext } from '../Authprovide';
+import { useNavigate } from 'react-router-dom';
 
 
 const CreateAssingment = () => {
-
+const naviagte=useNavigate()
 const {user}=useContext(AuthContext)
     const backStyle={
     
@@ -56,7 +57,7 @@ if (title === '' || description === '' || mark === '' || thumbailImage === '' ||
 
 const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email,date}
 
- axios.post('http://localhost:5000/assignment',assignmentInfo)
+ axios.post('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/assignment',assignmentInfo)
  .then(res=> {
     console.log(res.data)
  if(res.data.insertedId){
@@ -65,6 +66,7 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
             'Assingment Succesfully Created',
             'success'
           )
+
     }
     else{
         Swal.fire(
@@ -73,7 +75,7 @@ const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email
             'error'
         )
     }
-    
+    naviagte('/assin')
     
  })
 

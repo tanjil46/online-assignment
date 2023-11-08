@@ -56,7 +56,7 @@ const date=form.date.value;
 
 
 
- axios.put(`http://localhost:5000/update/${_id}`,updateAssignment)
+ axios.put(`https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/update/${_id}`,updateAssignment)
  .then(res=>{
 
 console.log(res.data)
