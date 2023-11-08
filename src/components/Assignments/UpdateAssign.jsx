@@ -13,7 +13,7 @@ const navigate=useNavigate()
 const defautlAssignment=useLoaderData()
 const{thumbailImage,title,mark,email,assignmentLevel,_id,description,date}=defautlAssignment
 
-
+console.log(defautlAssignment)
   
     const backStyle={
     

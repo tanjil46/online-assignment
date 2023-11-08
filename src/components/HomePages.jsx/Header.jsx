@@ -83,11 +83,22 @@ const logOutHandler=()=>{
          <div className="">
 
 {
-    user?<img className={`w-[55px]  rounded-full hover:${user.displayName}`} src={user.photoURL}></img>
+    
+    user?<div className='relative'>
+    <img className={`w-[60px] mx-auto  rounded-full hover:${user.displayName}`} src={user.photoURL}></img>
+    <div className="absolute top-0 left-0 text-sm p-2 bg-black bg-opacity-50  opacity-0 hover:opacity-100 transition-opacity text-white rounded-full">
+            <span className="text-sm ">{user.displayName}</span>
+        </div>
+
+</div>
+    
+
     :<img className={'w-[55px]  rounded-full '} src={USER}></img>
 
     
 }
+    
+
 
          </div>
 
@@ -120,7 +131,15 @@ const logOutHandler=()=>{
        
         <div className="mx-auto">
 {
-    user?<img className={`w-[55px] mx-auto  rounded-full hover:${user.displayName}`} src={user.photoURL}></img>
+    user?<div className='relative'>
+    <img className={`w-[55px] mx-auto  rounded-full hover:${user.displayName}`} src={user.photoURL}></img>
+    <div className="absolute top-0 left-0 p-2 bg-black bg-opacity-50  opacity-0 hover:opacity-100 transition-opacity text-white rounded-full">
+            <span className="text-sm ">{user.displayName}</span>
+        </div>
+
+</div>
+    
+
     :<img className={'w-[55px]  rounded-full '} src={USER}></img>
 
     

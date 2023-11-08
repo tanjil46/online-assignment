@@ -21,6 +21,7 @@ import UpdateAssign from './components/Assignments/UpdateAssign.jsx';
 import DetailsAssign from './components/Assignments/DetailsAssign.jsx';
 import SubmitAssign from './components/Assignments/SubmitAssign.jsx';
 import SubmitUpdate from './components/Assignments/SubmitUpdate.jsx';
+import MyAssignment from './components/Assignments/MyAssignment.jsx';
 
 
 
@@ -67,13 +68,17 @@ const router=createBrowserRouter([
 },
 {
  path:'/subassin',
- element:<SubmitAssign></SubmitAssign>
+ element:<PrivateOfCreateAssig><SubmitAssign></SubmitAssign></PrivateOfCreateAssig>
 
 
 },
 {
   path:'/updatesub/:id',
   element:<SubmitUpdate></SubmitUpdate>
+},
+{
+  path:'/myassin',
+  element:<PrivateOfCreateAssig><MyAssignment></MyAssignment></PrivateOfCreateAssig>
 }
 
 

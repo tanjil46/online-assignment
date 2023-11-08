@@ -52,13 +52,13 @@ if(res.data.insertedId){
     )
     
 }
-navigate('/subassin')
+
 
 })
 
 
 
-
+navigate('/subassin')
 
 
 

@@ -1,5 +1,9 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import { AuthContext } from '../Authprovide';
+import { useNavigate} from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 
@@ -8,11 +12,12 @@ import PropTypes from 'prop-types';
 
 
 const SubmitShow = ({submitAss}) => {
-
+const navigate=useNavigate()
 const{name,title,pdfLink,qNote,mark,thumbailImage,status,_id}=submitAss;
 
+const{user}=useContext(AuthContext)
 
-
+const email=(user&& user.email)
 
 const givemarkHandler=event=>{
 
@@ -20,36 +25,44 @@ const givemarkHandler=event=>{
    
     const form=event.target;
  const examMark=form.giveMark.value;
- 
-
-
-
  const feedBack=form.back.value
+ console.log(email,_id)
 
-console.log(feedBack)
+
 const statusSecond='Completed'
-const markStatus={
-    statusSecond,examMark
-}
-console.log(_id)
 
-axios.patch(`http://localhost:5000/submitassign/${_id}`,markStatus)
+const submittedMarkStatus={
+    statusSecond,examMark,email,feedBack,mark,title
+}
+
+
+
+const statusUpdate={statusSecond,email}
+
+
+axios.post('http://localhost:5000/submitted',submittedMarkStatus)
 .then(res=>{
     console.log(res.data)
-    // if(res.data.modifiedCount>0){
-    //   Swal.fire(
-    //     'SUCCESS',
-    //     'Mark Submitted Succesfully',
-    //     'success'
-    //   )
-    // }
+    if(res.data.insertedId){
+      Swal.fire(
+        'SUCCESS',
+        'Mark Submitted Succesfully',
+        'success'
+      )
+    }
 
 })
 
 
 
+axios.patch('http://localhost:5000/submitassign',statusUpdate)
+.then(res=>{
+    console.log(res.data)
+    
 
+})
 
+navigate('/myassin')
 
 
 }

@@ -27,7 +27,7 @@ return (
    
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
             {
-                submitA.map(submitAss=><SubmitShow submitAss={submitAss} key={submitAss._id}></SubmitShow>)
+                submitA.map((submitAss,idx)=><SubmitShow submitAss={submitAss} key={idx}></SubmitShow>)
             }
         </div>
         </div>
