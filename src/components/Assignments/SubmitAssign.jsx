@@ -10,7 +10,7 @@ const[submitA,setSubmitA]=useState([])
  useEffect(()=>{
 
 
- axios.get('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/submitassign',{withCredentials:true})
+ axios.get('https://assignment-server-side-rust.vercel.app/submitassign',{withCredentials:true})
  .then(res=>{
     setSubmitA(res.data)
     console.log(res.data)

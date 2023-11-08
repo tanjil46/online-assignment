@@ -40,7 +40,7 @@ const submittedValue={
 }
 
  
-axios.post('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/submitassign',submittedValue)
+axios.post('https://assignment-server-side-rust.vercel.app/submitassign',submittedValue)
 .then(res=>{
 
  console.log(res.data)

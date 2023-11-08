@@ -57,7 +57,7 @@ if (title === '' || description === '' || mark === '' || thumbailImage === '' ||
 
 const assignmentInfo={title,mark,thumbailImage,description,assignmentLevel,email,date}
 
- axios.post('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/assignment',assignmentInfo)
+ axios.post('https://assignment-server-side-rust.vercel.app/assignment',assignmentInfo)
  .then(res=> {
     console.log(res.data)
  if(res.data.insertedId){

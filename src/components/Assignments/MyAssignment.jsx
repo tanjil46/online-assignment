@@ -14,7 +14,7 @@ console.timeLog(email)
 
 
 
-        axios.get('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/submitted',{withCredentials:true})
+        axios.get('https://assignment-server-side-rust.vercel.app/submitted',{withCredentials:true})
         .then(res=>{
             setSumbit(res.data)
             console.log(res.data)

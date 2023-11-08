@@ -51,7 +51,7 @@ const submittedMarkStatus={
 const statusUpdate={statusSecond,email}
 
 
-axios.post('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/submitted',submittedMarkStatus)
+axios.post('https://assignment-server-side-rust.vercel.app/submitted',submittedMarkStatus)
 .then(res=>{
     console.log(res.data)
     if(res.data.insertedId){
@@ -66,7 +66,7 @@ axios.post('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app
 
 
 
-axios.patch('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/submitassign',statusUpdate)
+axios.patch('https://assignment-server-side-rust.vercel.app/submitassign',statusUpdate)
 .then(res=>{
     console.log(res.data)
     

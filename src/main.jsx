@@ -59,12 +59,12 @@ const router=createBrowserRouter([
 {
   path:'/update/:id',
   element:<PrivateOfCreateAssig><UpdateAssign></UpdateAssign></PrivateOfCreateAssig>,
-  loader:({params})=>fetch(`https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/assignment/${params.id}`)
+  loader:({params})=>fetch(`https://assignment-server-side-rust.vercel.app/assignment/${params.id}`)
 },
 {
   path:'/details/:id',
   element:<PrivateOfCreateAssig><DetailsAssign></DetailsAssign></PrivateOfCreateAssig>,
-  loader:()=>fetch('https://assignment-server-side-d4wrs85qt-tanjils-projects.vercel.app/assignment')
+  loader:()=>fetch('https://assignment-server-side-rust.vercel.app/assignment')
 },
 {
  path:'/subassin',
