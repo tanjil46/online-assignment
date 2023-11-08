@@ -86,10 +86,10 @@ const googleLogInHandler=()=>{
                <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 flex p-20 gap-0 ">
 
 
-<div className="card card-side bg-base-100 shadow-xl">
+<div className="card card-side mx-auto  bg-base-100 shadow-xl">
   
-<div className="">
-    <img className="w-[500px] h-[600px]" src={Assin}></img>
+<div className="hidden lg:block">
+    <img className=" w-[500px] h-[600px]" src={Assin}></img>
  </div>
 
 
@@ -106,7 +106,7 @@ const googleLogInHandler=()=>{
  <div className="hero-content ">
 
 
- <div className="card flex-shrink-0 w-[500px] h-[600px]  bg-white">
+ <div className="card flex-shrink-0  w-full lg:w-[500px] h-[600px]  bg-white">
      <div className="">
  <p className="text-center text-xl font-bold">Login Now</p>
  </div>
@@ -129,9 +129,9 @@ const googleLogInHandler=()=>{
  <div className="form-control mt-6">
  <button className="btn no-animation bg-gradient-to-r from-purple-500 to-pink-500">LOGIN</button>
  </div>
-<div className="">
- <p className="text-xl text-cyan-600 ">NEW HERE!PLEASE RESISTER
-   <Link className="btn" to='/resister'>Resister Here</Link>
+<div className="space-y-4">
+ <p className="md:text-xl text-sm text-cyan-600 ">NEW HERE!PLEASE RESISTER
+   <Link className="btn bg-slate-300" to='/resister'>Resister Here</Link>
  
  </p>
 

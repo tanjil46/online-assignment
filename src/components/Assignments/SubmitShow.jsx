@@ -1,6 +1,6 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../Authprovide';
 import { useNavigate} from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -14,7 +14,6 @@ import Swal from 'sweetalert2';
 const SubmitShow = ({submitAss}) => {
 const navigate=useNavigate()
 const{name,title,pdfLink,mark,thumbailImage,status,_id}=submitAss;
-
 
 
 
@@ -97,6 +96,11 @@ window.open(usePdfUrl,'_blank')
 
 
 
+
+
+
+
+
     return (
         <div>
           
@@ -115,6 +119,9 @@ window.open(usePdfUrl,'_blank')
 
     <div className="text-center">
      
+
+
+     
   {/* <Link className='btn' to={`/updatesub/${_id}`}>Give Marks</Link> */}
 
 
@@ -125,7 +132,22 @@ window.open(usePdfUrl,'_blank')
     
 
 <div className="">
-<a onClick={linkHabler} className='text-blue-400 border-b-2'  href=''>Link Of Google Pdf</a>
+
+
+<div>
+      <Document file="somefile.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+        <Page pageNumber={pageNumber} />
+      </Document>
+      <p>
+        Page {pageNumber} of {numPages}
+      </p>
+    </div>
+
+
+
+
+
+{/* <a onClick={linkHabler} className='text-blue-400 border-b-2'  href=''>Link Of Google Pdf</a> */}
 </div>
 
 <div className="">

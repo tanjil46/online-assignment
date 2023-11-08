@@ -116,9 +116,9 @@ e.preventDefault()
         <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 flex p-20 gap-0 ">
 
 
-        <div className="card card-side bg-base-100 shadow-xl">
+        <div className="card card-side mx-auto bg-base-100 shadow-xl">
           
-        <div className="">
+        <div className="hidden lg:block">
             <img className="w-[500px] h-[600px]" src={Assin}></img>
          </div>
         
@@ -136,7 +136,7 @@ e.preventDefault()
          <div className="hero-content ">
         
         
-         <div className="card flex-shrink-0 w-[500px] h-[600px]  bg-white">
+         <div className="card flex-shrink-0 w-full lg:w-[500px] h-[600px]  bg-white">
              <div className="">
          <p className="text-center text-xl font-bold">Sing In</p>
          </div>
@@ -188,7 +188,7 @@ e.preventDefault()
        
         </form>
         <div className="flex ">
-            <p className=''>Already Resisterd! Please Login</p>
+            <p className='text-sm'>Already Resisterd! Please Login</p>
             <Link className='btn bg-slate-500' to='/login'>Login Now</Link>
         </div>
          </div>
