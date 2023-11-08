@@ -1,8 +1,7 @@
-# React + Vite
+## Five Features Of My Project 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* student can create and choose their assignment here
+* only log user can create assignment or update assignment
+* user can store their assignment by their email
+* in submitted user can submit his/her marks and aslo can submit his assignment pdf link
+* user can secure his/her data in localhost by using token 
