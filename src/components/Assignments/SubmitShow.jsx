@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 
 const SubmitShow = ({submitAss}) => {
 const navigate=useNavigate()
-const{name,title,pdfLink,qNote,mark,thumbailImage,status,_id}=submitAss;
+const{name,title,pdfLink,mark,thumbailImage,status,_id}=submitAss;
 
 
 

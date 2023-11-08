@@ -71,7 +71,7 @@ const Authprovide = ({children}) => {
                unSubscribe()
             }
        
-       },[]);
+       },[user]);
   
   
   

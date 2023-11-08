@@ -130,21 +130,23 @@ if(currentPage<pages.length-1){
                </div>
 
 
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-10 ">
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-10 ">
+         
 
         {
-             spinner ?<div className="h-screen  items-center justify-center loading-lg flex">
-                <span className="loading loading-spinner text-center text-2xl text-green-600"></span>
+             spinner ?<div className="h-screen mx-auto  items-center justify-center loading-lg flex">
+                <span className="loading loading-spinner  text-2xl text-green-600"></span>
              </div>:
-             
+              
+
             filterlevelAssign.map((assign,idx)=><Allassignments setFilterLevelAssign={setFilterLevelAssign} filterlevelAssign={filterlevelAssign} assign={assign} key={idx}></Allassignments>)
+       
         }
+</div>
 
 
 
-
-          </div>
+        
 
 
       <div className="text-center space-x-8">
@@ -158,10 +160,10 @@ if(currentPage<pages.length-1){
 
        
 <select value={pagesNo} onChange={pagehandler} name='' id=''>
-            <option  value='5'>2</option>
-           <option value='10'>5</option>
-           <option value='20'>10</option>
-           <option value='50'>12</option>
+            <option  value='5'>5</option>
+           <option value='10'>10</option>
+           <option value='12'>12</option>
+           <option value='20'>20</option>
             </select>
 
 

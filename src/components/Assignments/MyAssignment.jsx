@@ -14,7 +14,7 @@ console.timeLog(email)
 
 
 
-        axios.get('http://localhost:5000/submitted')
+        axios.get('http://localhost:5000/submitted',{withCredentials:true})
         .then(res=>{
             setSumbit(res.data)
             console.log(res.data)

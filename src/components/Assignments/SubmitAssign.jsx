@@ -10,7 +10,7 @@ const[submitA,setSubmitA]=useState([])
  useEffect(()=>{
 
 
- axios.get('http://localhost:5000/submitassign')
+ axios.get('http://localhost:5000/submitassign',{withCredentials:true})
  .then(res=>{
     setSubmitA(res.data)
     console.log(res.data)
